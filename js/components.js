@@ -209,21 +209,21 @@ card.bonFire.addEventListener("click", (event) => {
 
 
 input.vlForest.addEventListener("input", () => {
-    input.changeVolume(input.vlForest);
+    input.changeVolume(sound.forest,input.vlForest);
     
 });
 
 input.vlClounds.addEventListener("input", () => {
-    input.changeVolume(input.vlClounds);
+    input.changeVolume(sound.clounds,input.vlClounds);
     
 });
 
 input.vlCoffeeTea.addEventListener("input", () => {
-    input.changeVolume(input.vlCoffeeTea);
+    input.changeVolume(sound.coffee,input.vlCoffeeTea);
     
 });
 
 input.vlBonFire.addEventListener("input", () => {
-    input.changeVolume(input.vlBonFire);
+    input.changeVolume(sound.bonFire,input.vlBonFire);
     
 });
