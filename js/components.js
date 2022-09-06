@@ -219,7 +219,7 @@ input.vlClounds.addEventListener("input", () => {
 });
 
 input.vlCoffeeTea.addEventListener("input", () => {
-    input.changeVolume(sound.coffee,input.vlCoffeeTea);
+    input.changeVolume(sound.coffeeTea,input.vlCoffeeTea);
     
 });
 
