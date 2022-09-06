@@ -7,12 +7,8 @@ export const sound = {
 
     kitchenTimer: new Audio("https://github.com/FranciscoYlderlan/stage-5-focustime-2.0/blob/main/assets/audios_kitchen-timer.mp3?raw=true"), 
     
-    updateVolume(value) {
-        this.forest.volume = value;
-        this.clounds.volume = value;
-        this.coffeeTea.volume = value;
-        this.bonFire.volume = value;
-
+    updateVolume(component,value) {
+        component.volume = value;
     },
     resetVolume() {
         this.forest.volume = 0.5;
