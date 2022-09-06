@@ -1,10 +1,10 @@
 export const sound = {
-    btnPress: new Audio("../assets/audios_button-press.wav"),
-    music: new Audio("../assets/audios_lo-fi.mp3"),
-    forest: new Audio("../assets/Floresta.wav"),
-    clounds: new Audio("../assets/Chuva.wav"),
-    coffeeTea: new Audio("../assets/Cafeteria.wav"),
-    bonFire: new Audio("../assets/Lareira.wav"),
+    btnPress: new Audio("https://github.com/FranciscoYlderlan/stage-5-focustime-2.0/blob/main//assets/audios_button-press.wav?raw=true"),
+    music: new Audio("https://github.com/FranciscoYlderlan/stage-5-focustime-2.0/blob/main//assets/audios_lo-fi.mp3?raw=true"),
+    forest: new Audio("https://github.com/FranciscoYlderlan/stage-5-focustime-2.0/blob/main//assets/Floresta.wav?raw=true"),
+    clounds: new Audio("https://github.com/FranciscoYlderlan/stage-5-focustime-2.0/blob/main//assets/Chuva.wav?raw=true"),
+    coffeeTea: new Audio("https://github.com/FranciscoYlderlan/stage-5-focustime-2.0/blob/main//assets/Cafeteria.wav?raw=true"),
+    bonFire: new Audio("https://github.com/FranciscoYlderlan/stage-5-focustime-2.0/blob/main//assets/Lareira.wav?raw=true"),
 
     kitchenTimer: new Audio("../assets/audios_kitchen-timer.mp3"), 
     
