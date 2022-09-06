@@ -1,0 +1,430 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+:root {
+    font-size: 62.5%;
+
+    --fs-texting: clamp(7.6rem, calc(4.75rem + ((1vw - 2.2px) * 10.4167)), 12.6rem);
+
+    
+    --wd-input: clamp(9rem, calc(4.75rem + ((1vw - 2.2px) * 13.4167)), 15rem);
+    --hg-input: clamp(8.5rem, calc(4.75rem + ((1vw - 2.2px) * 13.4167)), 13rem);
+    --gp-controls: clamp(0.7rem, calc(0.625rem + ((1vw - 3.2px) * 4.2321)), 4rem);
+    --wd-element: clamp(55%, calc(1.925rem + ((1vw - .3rem) * 5.8605)), 100%);
+ 
+    
+/* light mode */
+    --cl-texting-light: hsl(0, 0%, 0%);
+    
+    --bg-primary-light: hsl(0, 0%, 100%);
+    
+    --bg-card-light: hsla(240, 9%, 89%);
+    --bg-card-light-selected: hsl(194, 97%, 31%);
+    
+    --cl-element-light: hsl(240, 6%, 21%);
+    --cl-element-light-selected: hsl(0, 0%, 100%);
+
+/* Dark mode */
+
+    --cl-texting-dark: hsl(0, 0%, 100%);
+    
+    --bg-primary-dark: hsl(240, 5%, 7%);
+    
+    --bg-card-dark: hsl(240, 6%, 17%);
+    --bg-card-dark-selected: hsl(195, 74%, 15%);
+    
+    --cl-element-dark: hsla(240, 7%, 78%, 1);
+    --cl-element-dark-selected: hsl(0, 0%, 100%);
+
+       
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 1fr 4fr;
+    
+}
+body, input {
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--fs-texting);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 14.8rem;
+    
+}
+
+body.light {
+    background-color: var(--bg-primary-light); 
+}
+body.dark {
+    background-color: var(--bg-primary-dark); 
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+header {
+    display: flex;
+    justify-content: end;
+    
+}
+header button {
+    margin: 3.2rem 3.2rem 0;
+}
+
+header button svg.light path{
+    fill: var(--cl-texting-light);
+}
+
+header button svg.dark path{
+    fill: var(--cl-texting-dark);
+}
+
+
+main {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+main .timer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+}
+
+main.light .timer, input{
+    color: var(--cl-element-light); 
+}
+main.dark .timer, input{
+    color: var(--cl-texting-dark); 
+}
+
+main .timer form {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+main .timer form input {
+    max-width: var(--wd-input);
+    max-height: var(--hg-input);
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+
+}
+
+main.light .timer form input {
+    background-color: var(--bg-card-light);
+    color: var(--cl-element-light);
+}
+
+main.dark .timer form input {
+    background-color: var(--bg-card-dark);
+    color: var(--cl-texting-dark);
+}
+
+
+
+main .wrapper-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+main .wrapper-display .time {
+    display: flex;
+    max-width: var(--wd-input);
+    max-height: var(--hg-input);
+    place-items: center;
+}
+
+
+
+main .wrapper-controls {
+    display: flex;
+    justify-content: center;
+    align-self: start;
+    gap: var(--gp-controls);
+}
+
+main.light .timer .wrapper-controls button svg path{
+    fill: var(--cl-element-light); 
+}
+main.dark .timer .wrapper-controls button svg path{
+    fill: var(--cl-element-dark); 
+}
+
+
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cards.light {
+    background-color: var(--bg-card-light);
+}
+
+.cards.dark {
+    background-color: var(--bg-card-dark);
+}
+
+.cards .card {
+    display: grid;
+    place-content: center;
+    height: 100%;   
+    min-width: 5.7rem;
+}
+
+
+
+
+.cards .card.selected {
+    border-top: var(--bg-card-light-selected) solid .5rem;
+}
+
+.cards.light .card.selected {
+    border-top: var(--bg-card-light-selected) solid .5rem;
+}
+
+
+.cards .card svg {
+    justify-self: center;
+    width: var(--wd-element);
+}
+.cards.light .card svg path, button svg path {
+    fill:var(--cl-element-light);
+}
+
+.cards.dark .card svg path, button svg path {
+    fill:var(--cl-element-dark);
+}
+
+.cards .card input {
+    -webkit-appearance: none;
+    
+    height: .4rem;
+    
+    border-radius: 5px;
+    
+    background-size: 70% 100%;
+    background-repeat: no-repeat;
+}
+.cards.light .card input {
+    background:var(--cl-element-light);
+    background-image: var(--cl-element-light);
+}
+
+.cards.dark .card input {
+    background:var(--cl-element-dark);
+    background-image: var(--cl-element-dark);
+}
+
+.card.selected input {
+    background:var(--cl-texting-dark);
+    background-image: var(--cl-texting-dark);
+}
+
+
+.card input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 1rem;
+    overflow: visible;
+    cursor: pointer;
+}
+.cards.light .card input::-webkit-slider-thumb {
+    background-color: var(--cl-element-light);
+}
+.cards.dark .card input::-webkit-slider-thumb {
+    background-color: var(--cl-element-dark);
+}
+
+.card.selected input::-webkit-slider-thumb {
+    background-color: var(--cl-element-dark);
+}
+
+.accurate-controls {
+    display:none;
+    visibility: hidden;
+}
+
+.hide {
+    display: none !important;
+}
+
+@media (min-width:768px) {
+
+    header button {
+        margin: 6.4rem 6.4rem 0;
+    }
+
+    main {
+        grid-template-rows: 2fr 1fr;       
+    }
+    
+    main .timer {
+   
+        height: 21.3rem;
+    }
+
+    .card {
+        border-radius: 1.4rem 1.4rem 0 0;
+        gap: 3.2rem;
+        transition: all .3s;
+    }
+
+    
+    .card input {
+        width: 9rem;
+        margin: 0 2.4rem 2.4rem;
+    }
+
+    .cards .card:hover {
+        background-color: hsl(194, 96%, 22%) !important;
+    }
+
+    .cards .card:hover svg path{
+        fill: var(--cl-texting-dark);
+    }
+
+
+
+    .cards .card:hover input {
+        background:var(--cl-texting-dark);
+        background-image: var(--cl-texting-dark);
+    }
+
+
+    .cards .card:hover input::-webkit-slider-thumb {
+        background-color: var(--cl-element-dark);
+    }
+
+    .cards.light { 
+        background-color: var(--bg-card-light);
+    }
+    .cards.dark { 
+        background-color: var(--bg-card-dark);
+    }
+
+    .cards .card.selected {
+        border: none !important; 
+    }
+
+    .cards.light .card.selected {
+        background-color: var(--bg-card-light-selected);
+    }
+
+
+    
+    .cards.dark .card.selected {
+
+        background-color: var(--bg-card-dark-selected);
+    }
+
+    .cards .card.selected svg path{
+        fill: var(--cl-texting-dark);
+    }
+
+    .cards .card.selected input {
+        background:var(--cl-texting-dark);
+        background-image: var(--cl-texting-dark);
+    }
+
+
+    .cards .card.selected input::-webkit-slider-thumb {
+        background-color: var(--cl-element-dark);
+    }
+    .accurate-controls {
+        display:flex;
+        visibility: visible;
+    }
+    
+}
+
+@media (min-width:1024px) {
+    :root {
+        --gp-controls: 4.6rem;
+    }
+    body {
+      max-width: 144rem;
+      margin: auto;
+    }
+
+    main {
+        width: clamp(82rem, calc(51.25rem + ((1vw - 1rem) * 49.0385)), 92rem);
+        margin-top: 7rem;
+        justify-self: center;
+        align-self: flex-start;
+        
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    
+    main .wrapper-controls {
+        margin-top: 2rem;
+        justify-content: unset;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3.2rem;
+        height: 33.6rem;
+        
+    }
+    .cards.light {
+        background-color: var(--bg-primary-light);
+    }
+    .cards.dark {
+        background-color: var(--bg-primary-dark);
+    }
+    
+    .card {
+        border-radius: 2.4rem;
+        
+        padding: 0;
+        height: 15.2rem;
+    }
+    .cards.light .card {
+        background-color: var(--bg-card-light);
+    }
+    .cards.dark .card{
+        background-color: var(--bg-card-dark);
+    }
+
+    .card svg {
+        margin: 2.4rem 2.4rem 0;
+    }
+
+
+    .accurate-controls {
+        display:flex;
+        visibility: visible;
+    }
+
+}
+
