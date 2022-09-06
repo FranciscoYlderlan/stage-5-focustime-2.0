@@ -57,9 +57,9 @@ const input = {
     vlCoffeeTea: document.querySelector(".cards #volCoffeeTea"),
     vlBonFire: document.querySelector(".cards #volBonFire"),
 
-    changeVolume(element) {
-        let volume = Number(element.value)/100;
-        sound.updateVolume(volume);
+    changeVolume(soundElement,inputElement) {
+        let volume = Number(inputElement.value)/100;
+        sound.updateVolume(soundElement,volume);
     },
     
     update(minutes,seconds) {
