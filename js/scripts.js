@@ -10,7 +10,10 @@ let timeDefaut = {"minutes": 25, "seconds": 0};
 
 components.input.minutes.max
 
-sound.music.loop = true;
+sound.forest.loop = true;
+sound.clounds.loop = true;
+sound.coffeeTea.loop = true;
+sound.bonFire.loop = true;
 
 let btnTheme = components.button.theme;
 
