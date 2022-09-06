@@ -70,6 +70,9 @@ const input = {
     },
 
     validated() {
+        if(components.input.minutes.value > 60) {
+            components.input.minutes.value = 60;
+        }
         if(components.input.minutes.value < 0) {
             components.input.minutes.value = 0;
         }
